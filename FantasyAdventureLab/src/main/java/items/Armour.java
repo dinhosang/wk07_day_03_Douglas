@@ -5,7 +5,7 @@ import behaviours.IAbsorb;
 public class Armour extends Item implements IAbsorb {
 
 
-    int armourValue;
+    private int armourValue;
 
 
     public Armour(String type, int armourValue) {

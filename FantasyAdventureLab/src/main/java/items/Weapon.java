@@ -1,12 +1,13 @@
 package items;
 
 import behaviours.IDamage;
-import creatures.Enemy;
+import beings.Being;
+import beings.creatures.Enemy;
 
 
-public class Weapon extends Item implements IDamage<Enemy> {
+public class Weapon extends Item implements IDamage {
     
-    private final int damage;
+    private int damage;
 
     public Weapon(String type, int damage) {
         super(type);
@@ -17,7 +18,7 @@ public class Weapon extends Item implements IDamage<Enemy> {
         return damage;
     }
 
-    public void dealDamage(Enemy target){
+    public void dealDamage(Being target){
 
     }
 

@@ -1,7 +1,9 @@
 package behaviours;
 
-public interface IDamage<T> {
+import beings.Being;
 
-    void dealDamage(T target);
+public interface IDamage {
+
+    void dealDamage(Being target);
 
 }
