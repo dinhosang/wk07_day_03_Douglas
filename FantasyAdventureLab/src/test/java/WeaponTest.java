@@ -3,17 +3,17 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class ItemTest  {
+public class WeaponTest {
 
     Weapon weapon;
 
     @Before
     public void before() {
-        weapon = new Weapon("Sword", 4);
+        weapon = new Weapon("Sword", 3);
     }
 
     @Test
-    public void canGetName() {
-        assertEquals("Sword", weapon.getName());
+    public void canGetDamage() {
+        assertEquals(3, weapon.getDamage());
     }
 }
