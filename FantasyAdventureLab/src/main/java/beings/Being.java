@@ -2,26 +2,28 @@ package beings;
 
 import behaviours.IAbsorb;
 import behaviours.IDefend;
+import items.Weapon;
 
 import java.util.ArrayList;
 
 public abstract class Being {
 
-    protected String name;
-    protected int maxHealth;
-    protected int currentHealth;
+    private String name;
+    private int maxHealth;
+    private int currentHealth;
     protected IDefend defender;
     protected ArrayList<IAbsorb> protection;
 
 
     public Being(String name, int maxHealth) {
-        this.name = name;
-        this.maxHealth = maxHealth;
-        this.currentHealth = maxHealth;
-        this.protection = new ArrayList<>();
+        this.name           = name;
+        this.maxHealth      = maxHealth;
+        this.currentHealth  = maxHealth;
+        this.protection     = new ArrayList<>();
     }
 
-    protected void receiveAttack(int damageReceived){
+
+    public void receiveAttack(int damageReceived){
         if(defender != null){
             ((Being) defender).receiveAttack(damageReceived);
         } else {
@@ -30,6 +32,10 @@ public abstract class Being {
             }
             takedamage(damageReceived);
         }
+    }
+
+    public String getName() {
+        return name;
     }
 
     public int getMaxHealth(){
@@ -51,7 +57,6 @@ public abstract class Being {
         }
     }
 
-
     public void takedamage(int damageReceived){
         this.currentHealth -= damageReceived;
     }
@@ -60,12 +65,13 @@ public abstract class Being {
         this.defender = defender;
     }
 
+    public void removeDefender(){
+        this.defender = null;
+    }
+
     public void addProtection(IAbsorb protection){
         this.protection.add(protection);
     }
 
 
-    public String getName() {
-        return name;
-    }
 }

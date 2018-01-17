@@ -1,6 +1,4 @@
 package beings.creatures;
 
-public class Enemy {
-
-
+public class Creature {
 }

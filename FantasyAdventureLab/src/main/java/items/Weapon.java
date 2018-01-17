@@ -2,7 +2,6 @@ package items;
 
 import behaviours.IDamage;
 import beings.Being;
-import beings.creatures.Enemy;
 
 
 public class Weapon extends Item implements IDamage {
@@ -19,7 +18,7 @@ public class Weapon extends Item implements IDamage {
     }
 
     public void dealDamage(Being target){
-
+        target.receiveAttack(this.damage);
     }
 
 }

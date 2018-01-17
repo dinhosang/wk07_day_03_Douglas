@@ -2,14 +2,14 @@ package items;
 
 public abstract class Item  {
 
-    String type;
+    String name;
 
-    public Item(String type) {
-        this.type = type;
+    public Item(String name) {
+        this.name = name;
     }
 
 
     public String getName() {
-        return type;
+        return name;
     }
 }

@@ -2,16 +2,25 @@ package beings.adventurers;
 
 import beings.Being;
 
+
+
 public abstract class Adventurer<T> extends Being {
 
 
-    protected T mainWeapon;
+    protected T mainItem;
 
-    public Adventurer (String name, int maxHealth, T mainWeapon) {
+    public Adventurer (String name, int maxHealth, T mainItem) {
         super(name, maxHealth);
-        this.mainWeapon = mainWeapon;
+        this.mainItem = mainItem;
     }
 
-    public abstract void useMainWeapon();
+    public abstract void useMainItem(Being target);
 
+    public T getMainItem(){
+        return this.mainItem;
+    }
+
+    public void wieldItem(T newMainItem) {
+        this.mainItem = newMainItem;
+    }
 }

@@ -6,4 +6,5 @@ public interface IDefend {
 
     void defend(Being target);
 
+    void stopDefending();
 }
