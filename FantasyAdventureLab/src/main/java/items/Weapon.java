@@ -1,4 +1,10 @@
-public class Weapon extends Item {
+package items;
+
+import behaviours.IDamage;
+import creatures.Enemy;
+
+
+public class Weapon extends Item implements IDamage<Enemy> {
     
     private final int damage;
 
@@ -10,4 +16,9 @@ public class Weapon extends Item {
     public int getDamage() {
         return damage;
     }
+
+    public void dealDamage(Enemy target){
+
+    }
+
 }
